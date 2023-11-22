@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/insertSugerencia', [SugerenciaController ::class, 'store']);
     Route::get('/verSugerencias', [SugerenciaController ::class, 'show'])->name('verSugerencias');
     Route::delete('/borrarSugerencia/{sugerencia}', [SugerenciaController ::class, 'destroy'])->name('borrarSugerencia');
+    Route::post('editarSugerencia/{sugerencia}', [SugerenciaController ::class, 'update'])->name('editarSugerencia');
 });
 
 require __DIR__.'/auth.php';

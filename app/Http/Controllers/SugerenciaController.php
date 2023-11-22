@@ -66,15 +66,20 @@ class SugerenciaController extends Controller
      */
     public function update(Request $request, Sugerencia $sugerencia)
     {
-        //
+        $newsugerencia =Sugerencia::find($sugerencia->id);
+        $newsugerencia->mensaje= $request->mensaje;
+        $newsugerencia->save();
+        return redirect('verSugerencias');
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Sugerencia $sugerencia)
     {   
-
         $sugerencia->delete();
         return redirect('verSugerencias');
     }

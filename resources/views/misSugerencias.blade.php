@@ -31,16 +31,22 @@
                     @csrf
                     @method("DELETE")
                     <button type="submit">Eliminar </button>
+                </form>
 
-                    <div class="form-group">
+                <form method="POST" action="{{ route('editarSugerencia' , $sugerencia) }}">
+                    @csrf
+                    <input type="text" name="mensaje" value="{{ $sugerencia->mensaje}}">
+                    <input type="number" name ="id" value ="{{ $sugerencia->id }} " hidden>
+                    <button type="submit">Editar </button>
+                </form>
             </li>
             @endforeach
         </ul>
         @else
         <p>No hay sugerencias disponibles.</p>
         @endif
+        <div class="form-group">
 
+        </div>
 
-    </div>
-    </form>
 </x-app-layout>
