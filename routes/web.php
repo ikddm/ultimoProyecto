@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::post('/insertSugerencia', [SugerenciaController ::class, 'store']);
-    Route::get('/verSugerencias', [SugerenciaController ::class, 'show'])->name('verSugerencias');
+    Route::get('/verSugerencias', [SugerenciaController ::class, 'index'])->name('verSugerencias');
     Route::delete('/borrarSugerencia/{sugerencia}', [SugerenciaController ::class, 'destroy'])->name('borrarSugerencia');
     Route::post('editarSugerencia/{sugerencia}', [SugerenciaController ::class, 'update'])->name('editarSugerencia');
 });

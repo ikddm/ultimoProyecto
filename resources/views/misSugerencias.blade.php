@@ -14,8 +14,6 @@
             </div>
         </div>
     </div>
-
-
     @csrf
     <div class="container text-center">
         <h1 class="text-center">Bienvenido {{ Auth::user()->name }}. Estas son tus sugerencias.</h1>

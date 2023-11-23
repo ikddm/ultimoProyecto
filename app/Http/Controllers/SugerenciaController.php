@@ -14,7 +14,8 @@ class SugerenciaController extends Controller
      */
     public function index()
     {
-        //
+        $todasSugerencias = Sugerencia::all();
+        return view('misSugerencias',compact('todasSugerencias'));
     }
 
     /**
@@ -49,8 +50,7 @@ class SugerenciaController extends Controller
      */
     public function show(Sugerencia $sugerencia)
     {
-        $todasSugerencias = Sugerencia::all();
-        return view('misSugerencias',compact('todasSugerencias'));
+        
    }
 
     /**
@@ -71,8 +71,6 @@ class SugerenciaController extends Controller
         $newsugerencia->save();
         return redirect('verSugerencias');
     }
-
-
 
 
     /**
